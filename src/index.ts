@@ -47,6 +47,8 @@ export default {
 
         const originURL = new URL(originUrl);
         const publicURL = new URL(publicUrl);
+        const originURLHostPort = originURL.port ? `${originURL.hostname}:${originURL.port}` : originURL.hostname;
+        const publicURLHostPort = publicURL.port ? `${publicURL.hostname}:${publicURL.port}` : publicURL.hostname;
 
         return (
           text
@@ -61,8 +63,10 @@ export default {
             )
             // Full URL
             .replaceAll(originUrl, publicUrl)
+            // URL with // instead of full protocol https://
+            .replaceAll(`//${originURLHostPort}${originURL.pathname}`, `//${publicURLHostPort}${publicURL.pathname}/`)
             // Hostname and port
-            .replaceAll(originURL.hostname, `${publicURL.hostname}:${publicURL.port}`)
+            .replaceAll(originURL.hostname, publicURLHostPort)
         );
       };
 
