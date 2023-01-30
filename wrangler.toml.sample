@@ -1,0 +1,9 @@
+name = "cloudflare-reverse-proxy"
+main = "src/index.ts"
+compatibility_date = "2023-01-30"
+workers_dev = false
+route = { pattern = "*example.org/blog*", zone_name = "example.org" }
+
+[vars]
+ORIGIN_URL = ""
+PUBLIC_URL = ""

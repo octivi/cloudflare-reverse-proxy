@@ -1,14 +1,23 @@
 {
   "name": "cloudflare-reverse-proxy",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Cloudflare Workers as a reverse proxy. Route traffic from a (sub)domain to a subdirectory using Cloudflare Workers",
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "reverse-proxy"
+  ],
+  "author": "Marcin Engelmann <mengelmann@octivi.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish",
+    "test": "vitest"
+  },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230115.0",
     "typescript": "^4.9.4",
     "wrangler": "2.8.1"
-  },
-  "private": true,
-  "scripts": {
-    "start": "wrangler dev",
-    "deploy": "wrangler publish"
   }
 }

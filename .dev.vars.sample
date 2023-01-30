@@ -1,0 +1,3 @@
+# dotenv format
+ORIGIN_URL=https://blog.example.com
+PUBLIC_URL=https://example.com/blog
